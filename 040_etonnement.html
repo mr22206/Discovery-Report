@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Étonnement et Analyse &#8212; Project name not set 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/lightbox.min.css?v=6e7d0de0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="_static/js/lightbox2-options.js?v=b4db3a7c"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '040_etonnement';</script>
+    <script src="_static/custom_header_buttons.js?v=7f06181b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Missions confiées" href="050_missions.html" />
+    <link rel="prev" title="4. Intégration" href="030_integration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jan 22, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Alternance Fortinet 2025-2026</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="_static/discovery_report.pdf" title="Download PDF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-pdf fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Download PDF</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="005_resume.html">1. Résumé</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_introduction.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_entreprise.html">3. L’Entreprise Fortinet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="030_integration.html">4. Intégration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Étonnement et Analyse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="050_missions.html">6. Missions confiées</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_ameliorations.html">7. Propositions d’amélioration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_conclusion.html">8. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="080_glossaire.html">9. Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="090_bibliographie.html">10. Bibliographie</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Étonnement et Analyse</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Sommaire </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-positives">5.1. Observations positives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#une-culture-devops-mature">5.1.1. Une culture DevOps mature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomie-et-confiance">5.1.2. Autonomie et confiance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ecosysteme-eat-your-own-dog-food">5.1.3. L’écosystème <em>Eat Your Own Dog Food</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-de-complexite">5.2. Points de complexité</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#courbe-d-apprentissage-importante">5.2.1. Courbe d’apprentissage importante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-dispersee">5.2.2. Documentation dispersée</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-swot">5.3. Analyse SWOT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-visuelle">5.3.1. Représentation visuelle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detail-de-l-analyse">5.3.2. Détail de l’analyse</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-internes-positives">5.3.2.1. Forces (internes, positives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#faiblesses-internes-negatives">5.3.2.2. Faiblesses (internes, négatives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opportunites-externes-positives">5.3.2.3. Opportunités (externes, positives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menaces-externes-negatives">5.3.2.4. Menaces (externes, négatives)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodologie-de-travail-observee">5.4. Méthodologie de travail observée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cycle-de-developpement">5.4.1. Cycle de développement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-apprecies">5.4.2. Points appréciés</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthese-des-etonnements">5.5. Synthèse des étonnements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="etonnement-et-analyse">
+<h1><span class="section-number">5. </span>Étonnement et Analyse<a class="headerlink" href="#etonnement-et-analyse" title="Link to this heading">#</a></h1>
+<p>Ce chapitre présente mes principales observations et étonnements avec un regard neuf sur l’organisation et les pratiques de l’équipe.</p>
+<a class="reference internal image-reference" href="_images/header_04_etonnement.png"><a href="_images/header_04_etonnement.png" data-lightbox="image-set">
+<img alt="Astonishment and Analysis Header" class="align-center" src="_images/header_04_etonnement.png" style="width: 100%;" />
+</a>
+</a>
+<section id="observations-positives">
+<h2><span class="section-number">5.1. </span>Observations positives<a class="headerlink" href="#observations-positives" title="Link to this heading">#</a></h2>
+<p>L’immersion dans l’équipe m’a permis de relever plusieurs points très positifs concernant l’organisation et les méthodes de travail.</p>
+<section id="une-culture-devops-mature">
+<h3><span class="section-number">5.1.1. </span>Une culture DevOps mature<a class="headerlink" href="#une-culture-devops-mature" title="Link to this heading">#</a></h3>
+<p><strong>Premier étonnement majeur</strong> : le niveau de maturité des pratiques DevOps au sein de l’équipe.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ce qui m’a surpris</p>
+<p>Dès mon arrivée, j’ai découvert :</p>
+<ul class="simple">
+<li><p><strong>GitLab CI/CD</strong> : Pipelines automatisés pour chaque projet</p></li>
+<li><p><strong>Infrastructure as Code</strong> : Scripts Python versionnés, Docker</p></li>
+<li><p><strong>Documentation as Code</strong> : Sphinx avec build automatique</p></li>
+<li><p><strong>Environnements séparés</strong> : Dev → Preprod → Production</p></li>
+</ul>
+</div>
+<p>Venant du monde académique où les projets sont souvent gérés de manière plus artisanale, cette rigueur m’a impressionné.</p>
+</section>
+<section id="autonomie-et-confiance">
+<h3><span class="section-number">5.1.2. </span>Autonomie et confiance<a class="headerlink" href="#autonomie-et-confiance" title="Link to this heading">#</a></h3>
+<p><strong>Deuxième étonnement</strong> : le niveau d’autonomie accordé aux nouveaux arrivants.</p>
+<p>Contrairement à mes attentes, je n’ai pas eu de période d’observation passive. Dès la première semaine :</p>
+<ul class="simple">
+<li><p>Accès complet aux dépôts de code</p></li>
+<li><p>Possibilité de proposer des modifications</p></li>
+<li><p>Participation aux discussions techniques</p></li>
+</ul>
+<p>Cette approche <em>learning by doing</em> est très efficace mais demande une capacité d’adaptation rapide.</p>
+</section>
+<section id="l-ecosysteme-eat-your-own-dog-food">
+<h3><span class="section-number">5.1.3. </span>L’écosystème <em>Eat Your Own Dog Food</em><a class="headerlink" href="#l-ecosysteme-eat-your-own-dog-food" title="Link to this heading">#</a></h3>
+<p><strong>Troisième étonnement</strong> : Fortinet utilise intensivement ses propres produits en interne.</p>
+<p>Ce principe est illustré par l’architecture simplifiée suivante, montrant l’interconnexion des outils au sein du laboratoire.</p>
+<pre  class="mermaid">
+        graph LR
+    subgraph &quot;Infrastructure interne&quot;
+        FGT[FortiGate&lt;br/&gt;Pare-feu]
+        FMG[FortiManager&lt;br/&gt;Gestion]
+        FAZ[FortiAnalyzer&lt;br/&gt;Logs]
+        FAI[FortiAI&lt;br/&gt;IA]
+    end
+    
+    LAB[Lab Sophia] --&gt; FGT
+    FGT --&gt; FMG
+    FGT --&gt; FAZ
+    FAZ --&gt; FAI
+    
+    style FGT fill:#DA291C,stroke:#fff,color:#fff
+    style FMG fill:#DA291C,stroke:#fff,color:#fff
+    style FAZ fill:#DA291C,stroke:#fff,color:#fff
+    style FAI fill:#DA291C,stroke:#fff,color:#fff
+    </pre><p>Cette pratique permet aux équipes de :</p>
+<ul class="simple">
+<li><p>Comprendre les produits <em>de l’intérieur</em></p></li>
+<li><p>Identifier les bugs avant les clients</p></li>
+<li><p>Proposer des améliorations concrètes</p></li>
+</ul>
+</section>
+</section>
+<section id="points-de-complexite">
+<h2><span class="section-number">5.2. </span>Points de complexité<a class="headerlink" href="#points-de-complexite" title="Link to this heading">#</a></h2>
+<p>Bien que mon intégration se soit bien passée, j’ai rencontré plusieurs défis liés à la richesse de l’environnement technique.</p>
+<section id="courbe-d-apprentissage-importante">
+<h3><span class="section-number">5.2.1. </span>Courbe d’apprentissage importante<a class="headerlink" href="#courbe-d-apprentissage-importante" title="Link to this heading">#</a></h3>
+<p>La richesse de l’écosystème Fortinet est aussi sa complexité :</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domaine</p></th>
+<th class="head"><p>Éléments à maîtriser</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Produits</p></td>
+<td><p>FortiOS, FortiManager, FortiAnalyzer, FortiPAM, FortiAI…</p></td>
+</tr>
+<tr class="row-odd"><td><p>Infra Lab</p></td>
+<td><p>vSphere, NetBox, Docker</p></td>
+</tr>
+<tr class="row-even"><td><p>Outils internes</p></td>
+<td><p>GitLab, Knock, Redmine, Teams</p></td>
+</tr>
+<tr class="row-odd"><td><p>Documentation</p></td>
+<td><p>Sphinx, CMM</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Observation</strong> : Il faut accepter de ne pas tout comprendre immédiatement et progresser par couches successives.</p>
+</section>
+<section id="documentation-dispersee">
+<h3><span class="section-number">5.2.2. </span>Documentation dispersée<a class="headerlink" href="#documentation-dispersee" title="Link to this heading">#</a></h3>
+<p>J’ai remarqué que la documentation est parfois répartie entre plusieurs sources :</p>
+<ul class="simple">
+<li><p>GitLab (README, docs techniques)</p></li>
+<li><p>SharePoint (procédures, guides)</p></li>
+<li><p>CMM (documentation officielle)</p></li>
+<li><p>Teams (discussions, décisions)</p></li>
+</ul>
+<p>Cela peut rendre la recherche d’information plus longue pour un nouvel arrivant.</p>
+</section>
+</section>
+<section id="analyse-swot">
+<h2><span class="section-number">5.3. </span>Analyse SWOT<a class="headerlink" href="#analyse-swot" title="Link to this heading">#</a></h2>
+<p>L’analyse SWOT permet de synthétiser les observations en identifiant forces, faiblesses, opportunités et menaces.</p>
+<section id="representation-visuelle">
+<h3><span class="section-number">5.3.1. </span>Représentation visuelle<a class="headerlink" href="#representation-visuelle" title="Link to this heading">#</a></h3>
+<p>Le graphique en quadrants ci-dessous offre une vue synthétique des forces et faiblesses internes, ainsi que des opportunités et menaces externes.</p>
+<pre  class="mermaid">
+        quadrantChart
+    title Analyse SWOT - Fortinet (vision alternant)
+    x-axis Interne --&gt; Externe
+    y-axis &quot;Négatif&quot; --&gt; Positif
+    
+    quadrant-1 &quot;Opportunités&quot;
+    quadrant-2 Forces
+    quadrant-3 Faiblesses
+    quadrant-4 Menaces
+    
+    &quot;Leader NGFW&quot;: [0.2, 0.85]
+    &quot;Innovation IA&quot;: [0.15, 0.75]
+    &quot;Équipe experte&quot;: [0.3, 0.9]
+    &quot;Culture DevOps&quot;: [0.25, 0.7]
+    
+    &quot;Complexité produits&quot;: [0.3, 0.25]
+    &quot;Doc dispersée&quot;: [0.2, 0.35]
+    
+    &quot;Marché IA/Cloud&quot;: [0.8, 0.85]
+    &quot;Protocole MCP&quot;: [0.75, 0.75]
+    &quot;Demande cybersec&quot;: [0.85, 0.9]
+    
+    &quot;Concurrence&quot;: [0.8, 0.2]
+    &quot;Pénurie talents&quot;: [0.75, 0.3]
+    </pre></section>
+<section id="detail-de-l-analyse">
+<h3><span class="section-number">5.3.2. </span>Détail de l’analyse<a class="headerlink" href="#detail-de-l-analyse" title="Link to this heading">#</a></h3>
+<p>Voici le détail de chaque quadrant de l’analyse SWOT.</p>
+<section id="forces-internes-positives">
+<h4><span class="section-number">5.3.2.1. </span>Forces (internes, positives)<a class="headerlink" href="#forces-internes-positives" title="Link to this heading">#</a></h4>
+<p>Fortinet dispose de nombreux atouts sur lesquels s’appuyer.</p>
+<div class="tip admonition">
+<p class="admonition-title">Points forts</p>
+<ol class="arabic simple">
+<li><p><strong>Leadership marché</strong> : Fortinet est reconnu comme leader dans les pare-feux nouvelle génération</p></li>
+<li><p><strong>Innovation continue</strong> : FortiAI, intégration IA dans les produits</p></li>
+<li><p><strong>Équipe technique experte</strong> : Niveau technique élevé des CSE</p></li>
+<li><p><strong>Culture DevOps</strong> : Pratiques modernes de développement et déploiement</p></li>
+<li><p><strong>Infrastructure lab</strong> : Environnement de test complet et accessible</p></li>
+</ol>
+</div>
+</section>
+<section id="faiblesses-internes-negatives">
+<h4><span class="section-number">5.3.2.2. </span>Faiblesses (internes, négatives)<a class="headerlink" href="#faiblesses-internes-negatives" title="Link to this heading">#</a></h4>
+<p>Malgré ces forces, certains points méritent attention.</p>
+<div class="warning admonition">
+<p class="admonition-title">Points d’attention</p>
+<ol class="arabic simple">
+<li><p><strong>Complexité de l’écosystème</strong> : Nombreux produits à maîtriser</p></li>
+<li><p><strong>Documentation fragmentée</strong> : Multiples sources d’information</p></li>
+<li><p><strong>Courbe d’apprentissage</strong> : Temps nécessaire pour être opérationnel</p></li>
+</ol>
+</div>
+</section>
+<section id="opportunites-externes-positives">
+<h4><span class="section-number">5.3.2.3. </span>Opportunités (externes, positives)<a class="headerlink" href="#opportunites-externes-positives" title="Link to this heading">#</a></h4>
+<p>Le contexte externe offre de nombreuses opportunités.</p>
+<div class="note admonition">
+<p class="admonition-title">Tendances favorables</p>
+<ol class="arabic simple">
+<li><p><strong>Marché de la cybersécurité</strong> : Croissance continue (+15%/an)</p></li>
+<li><p><strong>Adoption cloud</strong> : Besoin de sécurité cloud/hybride</p></li>
+<li><p><strong>Réglementation</strong> : NIS2, DORA créent de nouveaux besoins</p></li>
+<li><p><strong>IA générative</strong> : Opportunité d’intégration (ex: protocole MCP)</p></li>
+<li><p><strong>Pénurie de talents</strong> : Valorisation des profils formés</p></li>
+</ol>
+</div>
+</section>
+<section id="menaces-externes-negatives">
+<h4><span class="section-number">5.3.2.4. </span>Menaces (externes, négatives)<a class="headerlink" href="#menaces-externes-negatives" title="Link to this heading">#</a></h4>
+<p>Des risques externes sont également à surveiller.</p>
+<div class="caution admonition">
+<p class="admonition-title">Risques identifiés</p>
+<ol class="arabic simple">
+<li><p><strong>Concurrence intense</strong> : Palo Alto, Cisco, CrowdStrike, Zscaler, Netskope, Cato</p></li>
+<li><p><strong>Évolution rapide des menaces</strong> : Nécessité d’adaptation constante</p></li>
+<li><p><strong>Guerre des talents</strong> : Difficulté de recrutement dans le secteur</p></li>
+</ol>
+</div>
+</section>
+</section>
+</section>
+<section id="methodologie-de-travail-observee">
+<h2><span class="section-number">5.4. </span>Méthodologie de travail observée<a class="headerlink" href="#methodologie-de-travail-observee" title="Link to this heading">#</a></h2>
+<p>L’organisation du travail au sein de l’équipe repose sur des processus clairs et efficaces, favorisant la qualité et la rapidité.</p>
+<section id="cycle-de-developpement">
+<h3><span class="section-number">5.4.1. </span>Cycle de développement<a class="headerlink" href="#cycle-de-developpement" title="Link to this heading">#</a></h3>
+<p>L’équipe suit une méthodologie <strong>AGILE adaptée</strong> dont les principales étapes sont décrites dans le diagramme suivant :</p>
+<pre  class="mermaid">
+        flowchart LR
+    A[Besoin identifié] --&gt; B[Discussion équipe]
+    B --&gt; C[Développement]
+    C --&gt; D[Code Review]
+    D --&gt; E[Pipeline CI/CD]
+    E --&gt; F{Tests OK?}
+    F --&gt;|Oui| G[Déploiement Preprod]
+    F --&gt;|Non| C
+    G --&gt; H[Validation]
+    H --&gt; I[Production]
+    
+    style A fill:#1a1a2e,stroke:#DA291C,color:#fff
+    style I fill:#DA291C,stroke:#fff,color:#fff
+    </pre></section>
+<section id="points-apprecies">
+<h3><span class="section-number">5.4.2. </span>Points appréciés<a class="headerlink" href="#points-apprecies" title="Link to this heading">#</a></h3>
+<p>Voici les aspects de la méthodologie que j’ai particulièrement appréciés.</p>
+<ul class="simple">
+<li><p><strong>Flexibilité</strong> : Pas de rigidité excessive dans les processus</p></li>
+<li><p><strong>Communication</strong> : Points réguliers, disponibilité des collègues</p></li>
+<li><p><strong>Qualité</strong> : Revue de code systématique</p></li>
+<li><p><strong>Automatisation</strong> : Réduction des tâches manuelles répétitives</p></li>
+</ul>
+</section>
+</section>
+<section id="synthese-des-etonnements">
+<h2><span class="section-number">5.5. </span>Synthèse des étonnements<a class="headerlink" href="#synthese-des-etonnements" title="Link to this heading">#</a></h2>
+<p>Le tableau ci-dessous résume mes principales observations.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Attendu</p></th>
+<th class="head"><p>Observé</p></th>
+<th class="head"><p>Étonnement</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Autonomie</p></td>
+<td><p>Progressive</p></td>
+<td><p>Immédiate</p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Positif</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Complexité</p></td>
+<td><p>Modérée</p></td>
+<td><p>Élevée</p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Challengeant</span></p></td>
+</tr>
+<tr class="row-even"><td><p>DevOps</p></td>
+<td><p>Basique</p></td>
+<td><p>Très mature</p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Positif</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Documentation</p></td>
+<td><p>Centralisée</p></td>
+<td><p>Dispersée</p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">À améliorer</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Ambiance</p></td>
+<td><p>Formelle</p></td>
+<td><p>Collaborative</p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Positif</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="030_integration.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Intégration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="050_missions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Missions confiées</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Sommaire
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-positives">5.1. Observations positives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#une-culture-devops-mature">5.1.1. Une culture DevOps mature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomie-et-confiance">5.1.2. Autonomie et confiance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ecosysteme-eat-your-own-dog-food">5.1.3. L’écosystème <em>Eat Your Own Dog Food</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-de-complexite">5.2. Points de complexité</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#courbe-d-apprentissage-importante">5.2.1. Courbe d’apprentissage importante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-dispersee">5.2.2. Documentation dispersée</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-swot">5.3. Analyse SWOT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-visuelle">5.3.1. Représentation visuelle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detail-de-l-analyse">5.3.2. Détail de l’analyse</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-internes-positives">5.3.2.1. Forces (internes, positives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#faiblesses-internes-negatives">5.3.2.2. Faiblesses (internes, négatives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opportunites-externes-positives">5.3.2.3. Opportunités (externes, positives)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menaces-externes-negatives">5.3.2.4. Menaces (externes, négatives)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodologie-de-travail-observee">5.4. Méthodologie de travail observée</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cycle-de-developpement">5.4.1. Cycle de développement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-apprecies">5.4.2. Points appréciés</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthese-des-etonnements">5.5. Synthèse des étonnements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mohammad Rezki
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, .
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Jan 22, 2026.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

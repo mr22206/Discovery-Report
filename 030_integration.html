@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Intégration &#8212; Project name not set 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/lightbox.min.css?v=6e7d0de0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="_static/js/lightbox2-options.js?v=b4db3a7c"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '030_integration';</script>
+    <script src="_static/custom_header_buttons.js?v=7f06181b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Étonnement et Analyse" href="040_etonnement.html" />
+    <link rel="prev" title="3. L’Entreprise Fortinet" href="020_entreprise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jan 22, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Alternance Fortinet 2025-2026</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="_static/discovery_report.pdf" title="Download PDF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-pdf fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Download PDF</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="005_resume.html">1. Résumé</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_introduction.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_entreprise.html">3. L’Entreprise Fortinet</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Intégration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="040_etonnement.html">5. Étonnement et Analyse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="050_missions.html">6. Missions confiées</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_ameliorations.html">7. Propositions d’amélioration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_conclusion.html">8. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="080_glossaire.html">9. Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="090_bibliographie.html">10. Bibliographie</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Intégration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Sommaire </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-premiers-jours">4.1. Les premiers jours</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jour-1-arrivee-chez-fortinet-27-octobre-2025">4.1.1. Jour 1 : Arrivée chez Fortinet (27 octobre 2025)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-equipe-noc-soc">4.1.2. L’équipe NOC/SOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#premiere-semaine-installation">4.2. Première semaine : Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-de-l-environnement-de-travail">4.2.1. Configuration de l’environnement de travail</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outils-et-methodologies-decouverts">4.2.2. Outils et méthodologies découverts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaines-2-3-immersion-dans-les-projets">4.3. Semaines 2-3 : Immersion dans les projets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prise-en-main-des-projets-existants">4.3.1. Prise en main des projets existants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#premier-projet-knock-analytics-dashboard">4.3.2. Premier projet : Knock Analytics Dashboard</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accompagnement-et-suivi">4.4. Accompagnement et suivi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-role-du-tuteur">4.4.1. Le rôle du tuteur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-d-apprentissage">4.4.2. Ressources d’apprentissage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilan-de-l-integration">4.5. Bilan de l’intégration</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="integration">
+<h1><span class="section-number">4. </span>Intégration<a class="headerlink" href="#integration" title="Link to this heading">#</a></h1>
+<p>Ce chapitre décrit mes premières semaines au sein de l’équipe NOC/SOC de Fortinet à Sophia-Antipolis.</p>
+<a class="reference internal image-reference" href="_images/header_03_integration.png"><a href="_images/header_03_integration.png" data-lightbox="image-set">
+<img alt="Integration Teamwork" class="align-center" src="_images/header_03_integration.png" style="width: 100%;" />
+</a>
+</a>
+<section id="les-premiers-jours">
+<h2><span class="section-number">4.1. </span>Les premiers jours<a class="headerlink" href="#les-premiers-jours" title="Link to this heading">#</a></h2>
+<p>L’arrivée dans une nouvelle entreprise est un moment clé. Voici le déroulement de mes premiers pas chez Fortinet.</p>
+<section id="jour-1-arrivee-chez-fortinet-27-octobre-2025">
+<h3><span class="section-number">4.1.1. </span>Jour 1 : Arrivée chez Fortinet (27 octobre 2025)<a class="headerlink" href="#jour-1-arrivee-chez-fortinet-27-octobre-2025" title="Link to this heading">#</a></h3>
+<p>Mon premier jour a été riche en découvertes et en rencontres. L’accueil a été structuré et bienveillant :</p>
+<div class="note admonition">
+<p class="admonition-title">Étapes d’intégration - Jour 1</p>
+<ol class="arabic simple">
+<li><p>✅ Récupération du badge visiteur (en attente du badge permanent)</p></li>
+<li><p>✅ Attribution du matériel informatique (laptop)</p></li>
+<li><p>✅ Création des accès aux systèmes internes</p></li>
+<li><p>✅ Présentation à l’équipe NOC/SOC</p></li>
+<li><p>✅ Tour des locaux et présentation de l’environnement</p></li>
+</ol>
+</div>
+</section>
+<section id="l-equipe-noc-soc">
+<h3><span class="section-number">4.1.2. </span>L’équipe NOC/SOC<a class="headerlink" href="#l-equipe-noc-soc" title="Link to this heading">#</a></h3>
+<p>J’ai été accueilli au sein de l’équipe <strong>CSE-INTL-CMM</strong> (Consulting Systems Engineer - International), sous la responsabilité de <strong>Jean-Pierre Forcioli</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>CMM</em> signifie <em>Central Management &amp; Monitoring</em>. Cela regroupe les produits Fortinet en charge de l’administration et la surveillance centralisées (FortiManager et FortiAnalyzer respectivement). Désormais, on parle plus d’activité NOC (Network Operations Center) et SOC (Security Operations Center) pour refléter les missions de l’équipe.</p>
+</div>
+<pre  class="mermaid">
+        graph TB
+    subgraph &quot;Équipe NOC/SOC Sophia&quot;
+        MGR[Jean-Pierre Forcioli&lt;br/&gt;Manager]
+        
+        subgraph &quot;Ingénieurs CSE&quot;
+            CSE1[CSE Senior]
+            CSE2[CSE Senior]
+            CSE3[CSE]
+        end
+        
+        subgraph &quot;Alternants/Stagiaires&quot;
+            ALT1[Mohammad Rezki&lt;br/&gt;Alternant]
+            INT1[Autres interns]
+        end
+    end
+    
+    MGR --&gt; CSE1
+    MGR --&gt; CSE2
+    MGR --&gt; CSE3
+    MGR --&gt; ALT1
+    MGR --&gt; INT1
+    
+    style ALT1 fill:#DA291C,stroke:#fff,color:#fff
+    </pre><p>L’ambiance au sein de l’équipe est collaborative et technique. Dès le premier jour, j’ai pu échanger avec d’autres alternants et stagiaires sur leurs expériences.</p>
+</section>
+</section>
+<section id="premiere-semaine-installation">
+<h2><span class="section-number">4.2. </span>Première semaine : Installation<a class="headerlink" href="#premiere-semaine-installation" title="Link to this heading">#</a></h2>
+<p>Cette première semaine a été dédiée à la construction d’un socle technique solide pour la suite de l’alternance.</p>
+<section id="configuration-de-l-environnement-de-travail">
+<h3><span class="section-number">4.2.1. </span>Configuration de l’environnement de travail<a class="headerlink" href="#configuration-de-l-environnement-de-travail" title="Link to this heading">#</a></h3>
+<p>La première semaine a été consacrée à la mise en place de mon environnement technique :</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Étape</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Durée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Installation laptop</p></td>
+<td><p>Configuration Windows/Linux, VPN</p></td>
+<td><p>1 jour</p></td>
+</tr>
+<tr class="row-odd"><td><p>Accès GitLab</p></td>
+<td><p>Clonage des dépôts de l’équipe</p></td>
+<td><p>0.5 jour</p></td>
+</tr>
+<tr class="row-even"><td><p>Formation produits</p></td>
+<td><p>Introduction FortiOS, FortiManager</p></td>
+<td><p>2 jours</p></td>
+</tr>
+<tr class="row-odd"><td><p>Certifications NSE</p></td>
+<td><p>NSE 1, NSE 3, FCA</p></td>
+<td><p>Semaine 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Lab Setup</p></td>
+<td><p>Configuration de l’environnement de test</p></td>
+<td><p>Semaine 1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Certifications Fortinet obtenues</p>
+<p><strong>Formations complétées (Octobre 2025) :</strong></p>
+<ul class="simple">
+<li><p>📚 <strong>Getting Started in Cybersecurity 3.0</strong> (28/10/2025)</p></li>
+<li><p>📚 <strong>FortiGate 7.6 Operator</strong> (29/10/2025)</p></li>
+<li><p>📚 <strong>FortiAnalyzer 7.6 Administrator</strong> (29/10/2025)</p></li>
+</ul>
+<p><strong>Certifications et badges :</strong></p>
+<ul class="simple">
+<li><p>🏅 <strong>Fortinet Certified Associate (FCA) in Cybersecurity</strong> (29/10/2025)</p></li>
+<li><p>🎖️ <strong>NSE 1</strong> - Getting Started in Cybersecurity v3.0</p></li>
+<li><p>🎖️ <strong>NSE 3</strong> - FortiGate Operator v7.6</p></li>
+</ul>
+</div>
+</section>
+<section id="outils-et-methodologies-decouverts">
+<h3><span class="section-number">4.2.2. </span>Outils et méthodologies découverts<a class="headerlink" href="#outils-et-methodologies-decouverts" title="Link to this heading">#</a></h3>
+<p>Le tableau ci-dessous résume les principaux outils et méthodologies utilisés par l’équipe :</p>
+<div class="tip admonition">
+<p class="admonition-title">Stack technique de l’équipe</p>
+<p><strong>Gestion de code</strong></p>
+<ul class="simple">
+<li><p>GitLab interne (CI/CD pipelines)</p></li>
+<li><p>Branches et merge requests</p></li>
+</ul>
+<p><strong>Documentation</strong></p>
+<ul class="simple">
+<li><p>Sphinx (génération de doc)</p></li>
+<li><p>SharePoint</p></li>
+</ul>
+<p><strong>Infrastructure Lab</strong></p>
+<ul class="simple">
+<li><p>vSphere (virtualisation)</p></li>
+<li><p>NetBox (IPAM/DCIM)</p></li>
+<li><p>Docker (conteneurisation)</p></li>
+</ul>
+<p><strong>Développement</strong></p>
+<ul class="simple">
+<li><p>Python (scripts, automatisation)</p></li>
+<li><p>Streamlit (dashboards)</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="semaines-2-3-immersion-dans-les-projets">
+<h2><span class="section-number">4.3. </span>Semaines 2-3 : Immersion dans les projets<a class="headerlink" href="#semaines-2-3-immersion-dans-les-projets" title="Link to this heading">#</a></h2>
+<p>Une fois l’environnement prêt, j’ai pu plonger dans le vif du sujet et contribuer aux projets de l’équipe.</p>
+<section id="prise-en-main-des-projets-existants">
+<h3><span class="section-number">4.3.1. </span>Prise en main des projets existants<a class="headerlink" href="#prise-en-main-des-projets-existants" title="Link to this heading">#</a></h3>
+<p>Rapidement, j’ai été impliqué dans des projets concrets de l’équipe :</p>
+<pre  class="mermaid">
+        timeline
+    title Chronologie d'intégration
+    
+    section Semaine 1
+        Oct 27-31 : Accueil et installation
+                  : Rencontre équipe
+                  : Formation initiale
+    
+    section Semaine 2
+        Nov 4-8 : Découverte du Dashboard
+               : Premier commit GitLab
+               : Documentation Sphinx
+    
+    section Semaine 3
+        Nov 10-14 : Travail sur Lab Management
+                  : VM dans vSphere
+                  : Intégration NetBox
+    </pre></section>
+<section id="premier-projet-knock-analytics-dashboard">
+<h3><span class="section-number">4.3.2. </span>Premier projet : Knock Analytics Dashboard<a class="headerlink" href="#premier-projet-knock-analytics-dashboard" title="Link to this heading">#</a></h3>
+<p>Dès la fin de la première semaine, j’ai commencé à travailler sur le <strong>Dashboard Knock Analytics</strong>, un outil interne permettant de visualiser les KPIs de l’équipe.</p>
+<p><strong>Mes premières contributions</strong> :</p>
+<ul class="simple">
+<li><p>Correction de bugs d’affichage</p></li>
+<li><p>Amélioration de la documentation</p></li>
+<li><p>Ajout de nouvelles visualisations</p></li>
+</ul>
+<p>Le nouveau rapport hebdomadaire a été déployé avec succès, apportant une meilleure visibilité sur l’activité de l’équipe. Ci-après un exemple de rapport :</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/weekly-report-html.png"><a href="_images/weekly-report-html.png" data-lightbox="image-set">
+<img alt="Exemple de rapport hebdomadaire" src="_images/weekly-report-html.png" style="width: 80%;" />
+</a>
+</a>
+<figcaption>
+<p><span class="caption-text">Exemple de rapport hebdomadaire généré automatiquement (données anonymisées).</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="accompagnement-et-suivi">
+<h2><span class="section-number">4.4. </span>Accompagnement et suivi<a class="headerlink" href="#accompagnement-et-suivi" title="Link to this heading">#</a></h2>
+<p>L’autonomie n’exclut pas l’accompagnement. Un cadre de suivi a été mis en place dès le début.</p>
+<section id="le-role-du-tuteur">
+<h3><span class="section-number">4.4.1. </span>Le rôle du tuteur<a class="headerlink" href="#le-role-du-tuteur" title="Link to this heading">#</a></h3>
+<p>Jean-Pierre Forcioli m’a accompagné tout au long de cette phase d’intégration avec :</p>
+<ul class="simple">
+<li><p><strong>Points hebdomadaires</strong> pour faire le bilan des avancées</p></li>
+<li><p><strong>Disponibilité</strong> pour répondre à mes questions techniques</p></li>
+<li><p><strong>Autonomie progressive</strong> dans la gestion de mes tâches</p></li>
+<li><p><strong>Feedback constructif</strong> sur mon travail</p></li>
+</ul>
+</section>
+<section id="ressources-d-apprentissage">
+<h3><span class="section-number">4.4.2. </span>Ressources d’apprentissage<a class="headerlink" href="#ressources-d-apprentissage" title="Link to this heading">#</a></h3>
+<p>L’entreprise met à disposition de nombreuses ressources :</p>
+<div class="note admonition">
+<p class="admonition-title">Formation continue</p>
+<ul class="simple">
+<li><p>📚 <strong>Documentation interne</strong> (CMM)</p></li>
+<li><p>🎓 <strong>Plateforme NSE</strong> (certifications Fortinet)</p></li>
+<li><p>👥 <strong>Knowledge sharing</strong> entre équipes</p></li>
+<li><p>🔬 <strong>Accès au lab</strong> pour expérimenter</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="bilan-de-l-integration">
+<h2><span class="section-number">4.5. </span>Bilan de l’intégration<a class="headerlink" href="#bilan-de-l-integration" title="Link to this heading">#</a></h2>
+<p>Après les trois premières semaines, je me suis senti :</p>
+<ul class="simple">
+<li><p><strong>Accueilli</strong> : L’équipe a pris le temps de m’intégrer</p></li>
+<li><p><strong>Outillé</strong> : Tous les accès et ressources nécessaires</p></li>
+<li><p><strong>Challengé</strong> : Des projets concrets dès le départ</p></li>
+<li><p><strong>Accompagné</strong> : Un suivi régulier par mon tuteur</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Point fort</p>
+<p>Ce qui m’a particulièrement marqué : la <strong>confiance</strong> accordée aux nouveaux arrivants. Dès les premiers jours, j’ai eu accès au code source, aux systèmes de production (en lecture), et j’ai pu proposer des modifications.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="020_entreprise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>L’Entreprise Fortinet</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="040_etonnement.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Étonnement et Analyse</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Sommaire
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-premiers-jours">4.1. Les premiers jours</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jour-1-arrivee-chez-fortinet-27-octobre-2025">4.1.1. Jour 1 : Arrivée chez Fortinet (27 octobre 2025)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-equipe-noc-soc">4.1.2. L’équipe NOC/SOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#premiere-semaine-installation">4.2. Première semaine : Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-de-l-environnement-de-travail">4.2.1. Configuration de l’environnement de travail</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outils-et-methodologies-decouverts">4.2.2. Outils et méthodologies découverts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaines-2-3-immersion-dans-les-projets">4.3. Semaines 2-3 : Immersion dans les projets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prise-en-main-des-projets-existants">4.3.1. Prise en main des projets existants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#premier-projet-knock-analytics-dashboard">4.3.2. Premier projet : Knock Analytics Dashboard</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accompagnement-et-suivi">4.4. Accompagnement et suivi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-role-du-tuteur">4.4.1. Le rôle du tuteur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-d-apprentissage">4.4.2. Ressources d’apprentissage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilan-de-l-integration">4.5. Bilan de l’intégration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mohammad Rezki
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, .
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Jan 22, 2026.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
